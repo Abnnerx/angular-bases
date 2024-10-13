@@ -1,0 +1,43 @@
+<h3>Listado de Héroes</h3>
+
+<!--
+<ul class="mt-2 list group">
+   <li class="list-groupitem">Spider-Man</li>
+   <li class="list-groupitem">IronMan</li>
+   <li class="list-groupitem">Hulk</li>
+   <li class="list-groupitem">Thor</li>
+</ul>
+-->
+
+<!-- si no hemos borado nada se muestra el h3 que dice no he borrado nada, si borramos algo se muestra el ultimo heroe borrado de la lista-->
+<!-- manejamos la condicion de el else con una referencia local -->
+<div *ngIf="deletedHero; else nothingWasDeleted">
+<h3>Héroe borrado <small class="text-danger">{{deletedHero}}</small></h3>
+</div>
+
+<!-- hacemos uso de la referencia local para condicionar el mostrado del mensaje-->
+ <!-- si no se ha eliminado ningun heroe al darle click al boton se sigue mostrando el mensaje -->
+<ng-template #nothingWasDeleted>
+<h3>No ha borrado nada.</h3>
+</ng-template>
+
+<!--- condicionamos si la longitud del arreglo es mayor a 0 se muestra el boton si no se destruye-->
+<button
+*ngIf="heroNames.length > 0"
+(click)="removeLastHero()"
+class="btn btn-outline-danger">
+  Borrar último héroe
+</button>
+
+<ul class="mt-2 list-group">
+<!-- metodo ciclico donde imprimimos los valores del arregos heroNames-->
+  <li *ngFor = "let name of heroNames"
+  class="list-group-item">
+  <strong>{{name}}</strong>
+  </li>
+
+<!-- metodo nuevo para versiones de angular actuales
+@for (hero of heroNames; track $index) {
+  <li>{{hero}}</li>
+} -->
+</ul>

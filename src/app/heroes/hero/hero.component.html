@@ -1,0 +1,57 @@
+<h1>{{titulo}}</h1>
+
+<!-- dl Definition list -->
+<dl>
+<!-- td define la celda de una tabla que contiene datos-->
+<td>Nombre:</td>
+<dd>{{name}}</dd>
+
+<td>Edad:</td>
+<dd>{{age}}</dd>
+
+<td>Método:</td>
+<dd>{{getHeroDescription()}}</dd>
+
+<td>Capitalizado:</td>
+<dd>{{capitalizedName}}</dd>
+
+</dl>
+
+<!-- ngIf Remueve o crea una parte del DOM basado en  la expresion showSection True para mostrarlo false para removerlo -->
+<!--
+<button
+*ngIf ="name !== 'Spider-Man'"
+(click)="ChangeHero('Spider-Man')" class="btn btn-primary mx-2">
+Cambiar Nombre
+</button>
+-->
+
+
+<!-- metodo nuevo para versiones actuales de angular-->
+ <!-- si el valor de name es diferente de Spider-Man se muestra el boton-->
+@if (name !== 'Spider-Man') {
+  <button (click)="ChangeHero('Spider-Man')" class="btn btn-primary mx-2">
+    Cambiar Nombre
+  </button>
+}@else
+{
+
+}
+
+<button
+*ngIf="age !== 39"
+(click)="ChangeAge(39)" class="btn btn-primary mx-2">
+Cambiar edad
+</button>
+
+
+<button
+(click)="resetForm()" class="btn btn-primary mx-2">
+Reset form
+</button>
+
+
+
+
+
+

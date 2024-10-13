@@ -1,0 +1,27 @@
+<h4>Agregar personaje</h4>
+
+<!-- required hace el campo obligatorio en conjunto se pone en el form la propiedad noValidate = false -->
+ <!-- cuando queremos escuchar eventos usamos parentesis y llaves cuadradas son atributos-->
+<form class="row" (ngSubmit)="emiCharacter()" [noValidate]="false">
+
+<input type="text"
+ name = "name"
+ required
+ [(ngModel)]= "character.name"
+ class = "form-control mb-2"
+ placeholder="NoSmbre" >
+
+<input type="number"
+name = "power"
+[(ngModel)] = "character.power"
+class = "form-control mb-2"
+placeholder="Poder">
+
+<button type ="submit" class="btn btn-primary">
+  Agregar
+</button>
+
+<!-- el uso del caracter '|'  seguido de la palabra json hace que pueda visualizarse el objeto en formato json  -->
+<pre> {{character | json }}</pre>
+
+</form>
