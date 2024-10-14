@@ -45,8 +45,8 @@ export class DbzService {
 
       this.characters.push(newCharacter);
      // this.characters.push(character);
-      console.log('MainPage');
-      console.log(character);
+      //console.log('MainPage');
+      //console.log(character);
     }
 
     deleteCharactertById (id: string) :void {

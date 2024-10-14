@@ -32,7 +32,7 @@ onDeleteCharacter(index:number):void{
 */
 
 onDeleteCharacter(id?:string):void{
-
+console.log(id);
   // si el id no existe no se manda a llamar la instruccion emit
   if (!id) return;
 
