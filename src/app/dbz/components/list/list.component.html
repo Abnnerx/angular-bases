@@ -1,0 +1,50 @@
+<h4>Listado</h4>
+<!--
+<ul class="list-group">
+    <li class = "list-group-item">Krilin - 500</li>
+    <li class = "list-group-item">Goku - 10,000</li>
+  </ul>
+-->
+
+<!--NgClass es una directiva que te permite aplicar una u otra
+clase a un elemento de html, dependiendo de una condición o expresión buleana.
+La clase indicada se aplicará al elemento cuando la expresión buleana sea verdadera.-->
+
+<!-- <ul class="list-group {{'list-group-item-success'}}">-->
+<ul class="list-group">
+  <!--  <ol>  ordered list -->
+<!-- recorro el todos los elementos del characterList y los muestro en la pagina-->
+<li *ngFor="
+let character of characterList;
+let i = index;
+let isFirst = first
+let isLast = last;
+let isEven = even;
+let isOdd = odd;
+"
+class="list-group-item d-flex justify-content-between align-items-center"
+[ngClass]="{
+'list-group-item-primary':isEven,
+'list-group-item-light':isOdd}">
+<div>
+<span class ="text-primary"> {{ i + 1 }} </span>
+<span>{{character.name }} - </span>
+<strong>Power: </strong>
+<span>{{ character.power }}</span>
+</div>
+<!-- <span>Es el primero: {{ i === 0 }} </span> -->
+<!-- <span>Es el primero {{ isFirst }}</span> -->
+<!--<span>Es el ultimo: {{ i === characterList.length - 1 }} </span> -->
+<!--<span>Es el ultimo {{ isLast }}</span> -->
+<!--<span>Es el par {{ isEven }}</span>  --> <!-- ES PAR -->
+<!--<span>No es par {{ isOdd }}</span>  --> <!-- NO ES PAR -->
+<!-- <button (click)="onDeleteCharacter(i)" class= "btn btn-danger">X</button> -->
+
+<button (click)="onDeleteCharacter( character.id )" class= "btn btn-danger">X</button>
+
+<!-- <button (click)="onDeleteCharacter2(i)" class= "btn btn-primary">X</button> -->
+
+</li>
+
+</ul>
+ <!-- </ol> -->

@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 
 // importamos el modulo
 import { CounterModule } from './counter/counter.module';
+import { DbzModule } from './dbz/dbz.module';
 import { HeroesModule } from './heroes/heroes.module';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HeroesModule } from './heroes/heroes.module';
     BrowserModule,
     AppRoutingModule,
     CounterModule, // agregamos el modulo counter
-    HeroesModule // agregamos el modulo heroes
+    HeroesModule, // agregamos el modulo heroes
+    DbzModule, // agregamos el modulo dbz
   ],
   providers: [],
   bootstrap: [AppComponent]

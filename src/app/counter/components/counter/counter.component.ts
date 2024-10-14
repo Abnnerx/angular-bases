@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ValueChangeEvent } from '@angular/forms';
+
 import { Product, taxCalculation} from './counterProduct';
 import { Character } from './counterCharacter';
 
@@ -34,12 +35,7 @@ interface Character {
   hometown?: string|undefined; // el simbolo ? indica que es opcional
   }
 */
-
-
-
 export class CounterComponent {
-
-
 
   public counter: number = 10
 
@@ -86,7 +82,7 @@ export class CounterComponent {
 
     }
 
-
+// utilizo la interface del componente counterCharacter
 InterfaceEjemplo2():Character{
 
   const strider:Character = {
@@ -104,7 +100,7 @@ return strider;
 
 }
 
-
+// utilizo la interface del componente counterProduct
     InterfaceEjemplo():Product[]{
 
       const shoppingCart : Product[] = [

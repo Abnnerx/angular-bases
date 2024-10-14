@@ -1,0 +1,37 @@
+<h1>DBZ Personajes</h1>
+
+<hr>
+
+
+<div class="row">
+
+ <div class="col">
+  <!-- Listado -->
+   <!-- invocamos el selector de list.component.ts-->
+   <!-- le paso los elementos del arreglo characters del main-page-component al arreglo charactesList del list.component -->
+ <!--
+   <dbz-list [characterList]="dbzService.characters"
+      (onDelete)="dbzService.deleteCharactertById($event)"></dbz-list>
+ </div>
+-->
+
+   <dbz-list [characterList]="characters"
+      (onDelete)="onDeleteCharacterById($event)">
+    </dbz-list>
+ </div>
+
+ <div class="col">
+  <!-- Formulario invocamos el selector de add-character.component.ts -->
+  <!-- queremos escuchar el evento cuando en el form de add-character.component se capture un nuevo personaje en el formulario-->
+  <!-- el @event esto es un nombre especifico de typescript sabe que es de el tipo a recibir -->
+<!--
+  <dbz-add-character
+ (onNewCharacter)="dbzService.onNewCharacter($event)">
+</dbz-add-character>
+-->
+<dbz-add-character
+(onNewCharacter)="onNewCharacter($event)">
+</dbz-add-character>
+</div>
+
+</div>
